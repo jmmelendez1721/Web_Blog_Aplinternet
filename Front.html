@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guitar Hero's blog</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+        }
+        .neon-text {
+            color: #39ff14;
+            text-align: center;
+            text-shadow:
+            0 0 5px #39ff14,
+            0 0 10px #39ff14,
+            0 0 15px #39ff14,
+            0 0 20px #39ff14,
+            0 0 25px #39ff14,
+            0 0 30px #39ff14;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+        .login-form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #39ff14;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-form input {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            font-size: 1.2em;
+            transition: all 0.2s ease-in-out;
+        }
+        .login-form input:focus {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+        .login-form button {
+            background-color: neongreen;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 1.2em;
+            transition: all 0.2s ease-in-out;
+            user-select: none;
+        }
+        .login-form button:hover {
+            background-color: #39ff14;
+        }
+    </style>
+    <script>
+        function handleLogin() {
+            const usernameInput = document.getElementById('user');
+            const passwordInput = document.getElementById('pass');
+            const validUsernamesPasswords = {
+                dmanzur: 'juanyi',
+		        odsierra: 'oñaño',
+                jmmelendez: 'mayeo'
+            };
+
+            if (usernameInput.value in validUsernamesPasswords && validUsernamesPasswords[usernameInput.value] === passwordInput.value) {
+                window.location.href = 'Web.html';
+            } else {
+                alert('Incorrect username or password');
+            }
+            }
+     </script>
+</head>
+<body>
+    <div class="neon-text">Guitar Hero</div>
+    <div class="login-form">
+        <input type="text" placeholder="Username" id="user" required />
+        <input type="password" placeholder="Password" id="pass" required />
+        <button type="button" class="input-button" onclick="handleLogin()">Login</button>
+    </div>
+</body>
+</html>
